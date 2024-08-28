@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Star, Moon, Sun, Github, Linkedin, Mail, MessageCircle, Gamepad, Smartphone } from 'lucide-react'
+import { Star, Moon, Sun, Github, Linkedin, Mail, MessageCircle, Gamepad, Smartphone, Clapperboard } from 'lucide-react'
 import { IntlProvider, FormattedMessage, useIntl } from 'react-intl'
 import avatar from '../assets/avatar.jpg';
 
@@ -40,8 +40,8 @@ const messages: { [key: string]: { [key: string]: string } } = {
     'project1Desc': 'Ubica los bloques correctamente para sumar puntos',
     'project2': 'Chat basico',
     'project2Desc': 'Puedes chatear con tus amigos',
-    'project3': 'Evasor de Asteroides',
-    'project3Desc': 'Un juego temático espacial construido con React y Canvas',
+    'project3': 'Buscador de peliculas',
+    'project3Desc': 'Permite consultar las peliculas más populares y su reparto, Nota: esta es una aplicacion para ver desde movil o tablet preferiblemente',
     'project4': 'Rastreador de Constelaciones',
     'project4Desc': 'Aplicación móvil para entusiastas de la observación de estrellas',
   },
@@ -56,8 +56,8 @@ const messages: { [key: string]: { [key: string]: string } } = {
     'project1Desc': 'Place the blocks correctly to score points',
     'project2': 'Basic Chat',
     'project2Desc': 'You can chat with your friends',
-    'project3': 'Asteroid Avoider',
-    'project3Desc': 'A space-themed game built with React and Canvas',
+    'project3': 'Movie Finder',
+    'project3Desc': 'Allows you to consult the most popular movies and their cast, Note: this is an application to watch from mobile or tablet preferably',
     'project4': 'Constellation Tracker',
     'project4Desc': 'Mobile app for stargazing enthusiasts',
   },
@@ -86,7 +86,7 @@ function PortfolioContent({ isDarkMode, setIsDarkMode, lang, setLang }
   const projects = [
     { title: intl.formatMessage({ id: 'project1' }), desc: intl.formatMessage({ id: 'project1Desc' }), icon: <Gamepad className="w-6 h-6" />, tech: ['React', 'Canvas', 'Javascript'], link: 'https://tetris-web.zeabur.app/' },
     { title: intl.formatMessage({ id: 'project2' }), desc: intl.formatMessage({ id: 'project2Desc' }), icon: <MessageCircle className="w-6 h-6" />, tech: ['HTML', 'Javascript', 'Node.js', 'Socket.io'], link: 'https://basic-chat.zeabur.app/' },
-    { title: intl.formatMessage({ id: 'project3' }), desc: intl.formatMessage({ id: 'project3Desc' }), icon: <Gamepad className="w-6 h-6" />, tech: ['React', 'Canvas'], link: '#' },
+    { title: intl.formatMessage({ id: 'project3' }), desc: intl.formatMessage({ id: 'project3Desc' }), icon: <Clapperboard className="w-6 h-6" />, tech: ['Dart', 'Flutter'], link: 'https://find-the-movie.zeabur.app/#home' },
     { title: intl.formatMessage({ id: 'project4' }), desc: intl.formatMessage({ id: 'project4Desc' }), icon: <Smartphone className="w-6 h-6" />, tech: ['React Native', 'GraphQL'], link: '#' },
   ]
 
