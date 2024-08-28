@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Star, Moon, Sun, Github, Linkedin, Mail, Globe, Database, Gamepad, Smartphone } from 'lucide-react'
+import { Star, Moon, Sun, Github, Linkedin, Mail, MessageCircle, Gamepad, Smartphone } from 'lucide-react'
 import { IntlProvider, FormattedMessage, useIntl } from 'react-intl'
 import avatar from '../assets/avatar.jpg';
 
@@ -36,10 +36,10 @@ const messages: { [key: string]: { [key: string]: string } } = {
     'projects': 'Mis Proyectos Cósmicos',
     'contact': 'Contáctame',
     'contactText': '¿Listo para embarcarte en un viaje cósmico de codificación? ¡Conectemos!',
-    'project1': 'App de Chat Galáctico',
-    'project1Desc': 'Mensajería en tiempo real a través de años luz',
-    'project2': 'Notas Nebulosa',
-    'project2Desc': 'Toma de notas en la nube con una interfaz estelar',
+    'project1': 'Juego tipo tetris',
+    'project1Desc': 'Ubica los bloques correctamente para sumar puntos',
+    'project2': 'Chat basico',
+    'project2Desc': 'Puedes chatear con tus amigos',
     'project3': 'Evasor de Asteroides',
     'project3Desc': 'Un juego temático espacial construido con React y Canvas',
     'project4': 'Rastreador de Constelaciones',
@@ -52,10 +52,10 @@ const messages: { [key: string]: { [key: string]: string } } = {
     'projects': 'My Cosmic Projects',
     'contact': 'Contact Me',
     'contactText': 'Ready to embark on a cosmic coding journey? Let\'s connect!',
-    'project1': 'Galactic Chat App',
-    'project1Desc': 'Real-time messaging across light-years',
-    'project2': 'Nebula Notes',
-    'project2Desc': 'Cloud-based note-taking with a stellar UI',
+    'project1': 'Tetris Game',
+    'project1Desc': 'Place the blocks correctly to score points',
+    'project2': 'Basic Chat',
+    'project2Desc': 'You can chat with your friends',
     'project3': 'Asteroid Avoider',
     'project3Desc': 'A space-themed game built with React and Canvas',
     'project4': 'Constellation Tracker',
@@ -84,8 +84,8 @@ function PortfolioContent({ isDarkMode, setIsDarkMode, lang, setLang }
   const intl = useIntl()
 
   const projects = [
-    { title: intl.formatMessage({ id: 'project1' }), desc: intl.formatMessage({ id: 'project1Desc' }), icon: <Globe className="w-6 h-6" />, tech: ['React', 'Node.js', 'Socket.io'], link: '#' },
-    { title: intl.formatMessage({ id: 'project2' }), desc: intl.formatMessage({ id: 'project2Desc' }), icon: <Database className="w-6 h-6" />, tech: ['Vue.js', 'Firebase'], link: '#' },
+    { title: intl.formatMessage({ id: 'project1' }), desc: intl.formatMessage({ id: 'project1Desc' }), icon: <Gamepad className="w-6 h-6" />, tech: ['React', 'Canvas', 'Javascript'], link: 'https://tetris-web.zeabur.app/' },
+    { title: intl.formatMessage({ id: 'project2' }), desc: intl.formatMessage({ id: 'project2Desc' }), icon: <MessageCircle className="w-6 h-6" />, tech: ['HTML', 'Javascript', 'Node.js', 'Socket.io'], link: 'https://basic-chat.zeabur.app/' },
     { title: intl.formatMessage({ id: 'project3' }), desc: intl.formatMessage({ id: 'project3Desc' }), icon: <Gamepad className="w-6 h-6" />, tech: ['React', 'Canvas'], link: '#' },
     { title: intl.formatMessage({ id: 'project4' }), desc: intl.formatMessage({ id: 'project4Desc' }), icon: <Smartphone className="w-6 h-6" />, tech: ['React Native', 'GraphQL'], link: '#' },
   ]
@@ -204,6 +204,8 @@ function PortfolioContent({ isDarkMode, setIsDarkMode, lang, setLang }
                   className={`${isDarkMode ? 'bg-indigo-900' : 'bg-indigo-100'} p-6 rounded-lg cursor-pointer`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  target='_blank'
+                  rel="noreferrer"
                 >
                   <div className="flex items-center mb-4">
                     {project.icon}
